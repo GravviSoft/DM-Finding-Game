@@ -1,1 +1,3 @@
-# DM-Finding-Game-
+# DM-Finding-Game
+
+Project 1 specs
