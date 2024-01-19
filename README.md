@@ -1,3 +1,5 @@
-# DM-Finding-Game
+# Letters Game
 
-Project 1 specs
+## Devmountain Specs
+
+![alt text](https://github.com/GravviSoft/DM-Finding-Game/blob/main/Letters%20Game.png)
