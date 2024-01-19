@@ -14,6 +14,9 @@
 		6377941029A31E0A00D08D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6377940F29A31E0A00D08D42 /* Assets.xcassets */; };
 		6377941329A31E0A00D08D42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6377941129A31E0A00D08D42 /* LaunchScreen.storyboard */; };
 		63F098E229B046BE00B97BC2 /* DMFindingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F098E129B046BE00B97BC2 /* DMFindingGameTests.swift */; };
+		C17B2BED2B57681E0035850C /* LetterGameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B2BEC2B57681E0035850C /* LetterGameBrain.swift */; };
+		C1BCCEBF2B59A288002BEF38 /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCCEBE2B59A288002BEF38 /* GameBrain.swift */; };
+		C1BCCEC32B59A830002BEF38 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCCEC22B59A830002BEF38 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		6377941429A31E0A00D08D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F098DF29B046BE00B97BC2 /* DMFindingGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMFindingGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F098E129B046BE00B97BC2 /* DMFindingGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMFindingGameTests.swift; sourceTree = "<group>"; };
+		C17B2BEC2B57681E0035850C /* LetterGameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGameBrain.swift; sourceTree = "<group>"; };
+		C1BCCEBE2B59A288002BEF38 /* GameBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBrain.swift; sourceTree = "<group>"; };
+		C1BCCEC22B59A830002BEF38 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,9 @@
 			children = (
 				6377940629A31E0900D08D42 /* AppDelegate.swift */,
 				6377940829A31E0900D08D42 /* SceneDelegate.swift */,
-				6377940A29A31E0900D08D42 /* GameViewController.swift */,
-				6377940C29A31E0900D08D42 /* Main.storyboard */,
+				C17B2BEE2B5768270035850C /* Model */,
+				C17B2BEB2B5767260035850C /* View */,
+				C17B2BEA2B57671A0035850C /* Controller */,
 				6377940F29A31E0A00D08D42 /* Assets.xcassets */,
 				6377941129A31E0A00D08D42 /* LaunchScreen.storyboard */,
 				6377941429A31E0A00D08D42 /* Info.plist */,
@@ -95,6 +102,32 @@
 				63F098E129B046BE00B97BC2 /* DMFindingGameTests.swift */,
 			);
 			path = DMFindingGameTests;
+			sourceTree = "<group>";
+		};
+		C17B2BEA2B57671A0035850C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C1BCCEC22B59A830002BEF38 /* StartViewController.swift */,
+				6377940A29A31E0900D08D42 /* GameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C17B2BEB2B5767260035850C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6377940C29A31E0900D08D42 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C17B2BEE2B5768270035850C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1BCCEBE2B59A288002BEF38 /* GameBrain.swift */,
+				C17B2BEC2B57681E0035850C /* LetterGameBrain.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6377940B29A31E0900D08D42 /* GameViewController.swift in Sources */,
+				C1BCCEBF2B59A288002BEF38 /* GameBrain.swift in Sources */,
 				6377940729A31E0900D08D42 /* AppDelegate.swift in Sources */,
+				C17B2BED2B57681E0035850C /* LetterGameBrain.swift in Sources */,
 				6377940929A31E0900D08D42 /* SceneDelegate.swift in Sources */,
+				C1BCCEC32B59A830002BEF38 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
