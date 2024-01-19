@@ -46,9 +46,10 @@ class GameViewController: UIViewController {
     @IBAction func letterBtn(_ sender: UIButton) {
         let selectedletter = sender.titleLabel!.text!
         if selectedletter == gameBrain.targetLetter{
+            gameBrain.updateScore()
             nextRound()
             sender.backgroundColor = .green
-            scoreLabel.text = "Score: \(gameBrain.updateScore())"
+            scoreLabel.text = "Score: \(gameBrain.score)"
         } else{
             sender.backgroundColor = UIColor.red
             nextRound()
@@ -71,7 +72,7 @@ class GameViewController: UIViewController {
       
     func nextRound() {
         gameBrain.shuffleNumbers()
-        targetLabel.text = gameBrain.letterSelected()
+        targetLabel.text = gameBrain.targetLetter
         for (index, letter) in gameBrain.randomLetters.enumerated() {
             btnCollection[index].setTitle(letter, for: .normal)
         }

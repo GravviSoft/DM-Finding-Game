@@ -269,9 +269,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="jlR-yb-eNz" firstAttribute="top" secondItem="ZT6-ii-VM3" secondAttribute="bottom" id="EzK-gj-KEI"/>
                                     <constraint firstItem="ZT6-ii-VM3" firstAttribute="leading" secondItem="HZg-21-EcM" secondAttribute="leading" id="Lpx-mU-9W6"/>
-                                    <constraint firstItem="ZT6-ii-VM3" firstAttribute="top" secondItem="HZg-21-EcM" secondAttribute="top" constant="10" id="NXY-H7-hDK"/>
                                     <constraint firstAttribute="trailing" secondItem="ZT6-ii-VM3" secondAttribute="trailing" id="cuv-fN-lga"/>
                                 </constraints>
                             </stackView>

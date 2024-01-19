@@ -18,8 +18,7 @@ class StartViewController: UIViewController {
 
     @IBAction func startGameBtn(_ sender: Any) {
         self.performSegue(withIdentifier: "goToGameController", sender: self)
-        gameBrain.secondsRemaining = 30
-        gameBrain.score = 0
+        gameBrain.newGame()
     }
     
     

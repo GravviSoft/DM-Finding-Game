@@ -29,13 +29,12 @@ class GameBrain {
         targetLetter = randomLetters[Int.random(in: 0...11)]
     }
     
-    
-    func updateScore() -> String {
-        score += 1
-        return String(score)
+    func newGame(){
+        score = 0
+        secondsRemaining = 30
     }
     
-    func letterSelected() -> String{
-        return targetLetter
+    func updateScore(){
+        score += 1
     }
 }

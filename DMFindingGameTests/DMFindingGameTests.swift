@@ -5,6 +5,7 @@
 //  Created by David Ruvinskiy on 3/1/23.
 //
 
+
 import XCTest
 @testable import DMFindingGame
 
@@ -15,7 +16,7 @@ final class DMFindingGameTests: XCTestCase {
         
         for _ in 1...100 {
             let numLetters = Int.random(in: 1...12)
-            gameBrain.generateRandomLetters(numLetters: 11)
+            gameBrain.newGame()
             let oldHighScore = gameBrain.highScore
             
             XCTAssertEqual(gameBrain.randomLetters.count, numLetters)
