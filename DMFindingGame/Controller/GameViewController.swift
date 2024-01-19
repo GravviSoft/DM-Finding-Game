@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextRound()
+        updateUI()
         configureTimer()
     }
     
@@ -46,13 +46,13 @@ class GameViewController: UIViewController {
     @IBAction func letterBtn(_ sender: UIButton) {
         let selectedletter = sender.titleLabel!.text!
         if selectedletter == gameBrain.targetLetter{
-            gameBrain.updateScore()
-            nextRound()
+            gameBrain.letterSelected(letter: selectedletter )
+            updateUI()
             sender.backgroundColor = .green
             scoreLabel.text = "Score: \(gameBrain.score)"
         } else{
             sender.backgroundColor = UIColor.red
-            nextRound()
+            updateUI()
         }
         timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (Timer) in
             sender.backgroundColor = UIColor.systemCyan
@@ -70,7 +70,7 @@ class GameViewController: UIViewController {
     }
     
       
-    func nextRound() {
+    func updateUI() {
         gameBrain.shuffleNumbers()
         targetLabel.text = gameBrain.targetLetter
         for (index, letter) in gameBrain.randomLetters.enumerated() {

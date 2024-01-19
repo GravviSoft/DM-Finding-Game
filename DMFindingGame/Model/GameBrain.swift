@@ -3,7 +3,6 @@
 //  DMFindingGame
 //
 //  Created by David Ruvinskiy on 4/17/23.
-//
 
 import Foundation
 
@@ -14,7 +13,7 @@ class GameBrain {
     var randomLetters = [String]()
     var score = 0
     var highScore = 0
-//    var numLetters = 0
+//    var numLetters = 0 - I dont use this in my solution.
     var secondsRemaining = 30
     let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     
@@ -34,7 +33,7 @@ class GameBrain {
         secondsRemaining = 30
     }
     
-    func updateScore(){
+    func letterSelected(letter: String){
         score += 1
     }
 }
