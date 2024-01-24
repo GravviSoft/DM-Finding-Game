@@ -184,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 637793FE29A31E0900D08D42 /* Build configuration list for PBXProject "DMFindingGame" */;
+			buildConfigurationList = 637793FE29A31E0900D08D42 /* Build configuration list for PBXProject "Letters Game" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -398,6 +398,7 @@
 				DEVELOPMENT_TEAM = KR322V3HJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DMFindingGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Letters;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -427,6 +428,7 @@
 				DEVELOPMENT_TEAM = KR322V3HJ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DMFindingGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Letters;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -485,7 +487,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		637793FE29A31E0900D08D42 /* Build configuration list for PBXProject "DMFindingGame" */ = {
+		637793FE29A31E0900D08D42 /* Build configuration list for PBXProject "Letters Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6377941529A31E0A00D08D42 /* Debug */,
