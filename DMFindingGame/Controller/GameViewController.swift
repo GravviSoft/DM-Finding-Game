@@ -15,7 +15,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet var btnCollection: [UIButton]!
     
-    var timer: Timer!
+    var scoreBoardTimer: Timer!
+    var btnColorTimer: Timer!
     let gameBrain = GameBrain.shared
     
     override func viewDidLoad() {
@@ -26,12 +27,12 @@ class GameViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        timer.invalidate()
+        scoreBoardTimer.invalidate()
     }
     
     func configureTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: fireTimer(timer:))
-        RunLoop.current.add(timer, forMode: .common)
+        scoreBoardTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: fireTimer(timer:))
+        RunLoop.current.add(scoreBoardTimer, forMode: .common)
     }
     
     func fireTimer(timer: Timer) {
@@ -54,7 +55,7 @@ class GameViewController: UIViewController {
             sender.backgroundColor = UIColor.red
             updateUI()
         }
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (Timer) in
+        btnColorTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (Timer) in
             sender.backgroundColor = UIColor.systemCyan
         }
     }
