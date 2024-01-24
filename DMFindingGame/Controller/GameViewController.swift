@@ -70,7 +70,6 @@ class GameViewController: UIViewController {
         gameBrain.score > gameBrain.highScore ? gameBrain.highScore = gameBrain.score : nil
     }
     
-      
     func updateUI() {
         gameBrain.shuffleNumbers()
         targetLabel.text = gameBrain.targetLetter

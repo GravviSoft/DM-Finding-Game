@@ -36,4 +36,5 @@ class GameBrain {
     func letterSelected(letter: String){
         score += 1
     }
+    
 }
