@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cOv-fo-Gm4">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pop-Ur-Zwn">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="cOv-fo-Gm4" customClass="StartViewController" customModule="DMFindingGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aFm-EQ-heq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4eF-mu-kbC">
-                                <rect key="frame" x="89.666666666666671" y="368" width="213.66666666666663" height="116.33333333333331"/>
+                                <rect key="frame" x="80.666666666666671" y="348" width="213.66666666666663" height="116.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3b-gw-agb">
                                         <rect key="frame" x="0.0" y="0.0" width="213.66666666666666" height="44.333333333333336"/>
@@ -41,14 +41,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc5-fI-9Ou">
+                                <rect key="frame" x="110.66666666666669" y="686" width="154" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="See All Scores"/>
+                                <connections>
+                                    <segue destination="Ps4-sq-9bA" kind="show" identifier="StatSegueID" id="v0b-im-Yxe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wnm-3m-99X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4eF-mu-kbC" firstAttribute="centerY" secondItem="aFm-EQ-heq" secondAttribute="centerY" id="Ggr-ii-8Nc"/>
+                            <constraint firstItem="Nc5-fI-9Ou" firstAttribute="centerX" secondItem="aFm-EQ-heq" secondAttribute="centerX" id="ZrK-6v-Pyt"/>
+                            <constraint firstItem="wnm-3m-99X" firstAttribute="bottom" secondItem="Nc5-fI-9Ou" secondAttribute="bottom" constant="50" id="mPp-JE-ifd"/>
                             <constraint firstItem="4eF-mu-kbC" firstAttribute="centerX" secondItem="aFm-EQ-heq" secondAttribute="centerX" id="xIU-1Y-tcj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hnt-hA-gDH"/>
                     <connections>
                         <outlet property="highScoreLabel" destination="s3b-gw-agb" id="5j4-AK-maL"/>
                         <segue destination="cLM-BX-Ev8" kind="presentation" identifier="goToGameController" modalPresentationStyle="fullScreen" id="tA0-jw-tfb"/>
@@ -56,24 +68,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vF-tB-pLW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="-73"/>
+            <point key="canvasLocation" x="583.20000000000005" y="-73.152709359605907"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="uBD-Ng-N4y">
             <objects>
                 <viewController id="cLM-BX-Ev8" customClass="GameViewController" customModule="DMFindingGame" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ZV-5E-ebi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-21-EcM">
-                                <rect key="frame" x="25" y="50" width="343" height="752"/>
+                                <rect key="frame" x="25" y="50" width="325" height="712"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZT6-ii-VM3" userLabel="Horizontal View">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="142.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="134.33333333333334"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUU-cj-JBx">
-                                                <rect key="frame" x="0.0" y="0.0" width="231.33333333333334" height="22.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="213.33333333333334" height="22.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Back">
@@ -86,7 +98,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kIJ-8B-tK7">
-                                                <rect key="frame" x="232.33333333333329" y="0.0" width="110.66666666666666" height="48"/>
+                                                <rect key="frame" x="214.33333333333334" y="0.0" width="110.66666666666666" height="48"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHv-ID-MD1">
                                                         <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="24"/>
@@ -107,17 +119,17 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlR-yb-eNz">
-                                        <rect key="frame" x="0.0" y="152.33333333333331" width="343" height="142.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="144.33333333333331" width="325" height="134.33333333333331"/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.34999999999999998"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gat-81-DW4">
-                                        <rect key="frame" x="0.0" y="304.66666666666669" width="343" height="142.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="288.66666666666669" width="325" height="134.66666666666669"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fce-Il-jHC">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="142.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="134.66666666666666"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -129,7 +141,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LO-TY-BHv">
-                                                <rect key="frame" x="88.333333333333343" y="0.0" width="78.333333333333343" height="142.66666666666666"/>
+                                                <rect key="frame" x="83.666666666666671" y="0.0" width="74.000000000000014" height="134.66666666666666"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -141,7 +153,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgt-dB-fva">
-                                                <rect key="frame" x="176.66666666666666" y="0.0" width="78" height="142.66666666666666"/>
+                                                <rect key="frame" x="167.66666666666666" y="0.0" width="73.666666666666657" height="134.66666666666666"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -153,7 +165,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LX-rz-Swi">
-                                                <rect key="frame" x="264.66666666666669" y="0.0" width="78.333333333333314" height="142.66666666666666"/>
+                                                <rect key="frame" x="251.33333333333329" y="0.0" width="73.666666666666657" height="134.66666666666666"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -167,10 +179,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zg3-Ec-SD0">
-                                        <rect key="frame" x="0.0" y="457.33333333333331" width="343" height="142.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="433.33333333333331" width="325" height="134.33333333333331"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skZ-mf-6K1">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="142.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -182,7 +194,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HV-LT-fvY">
-                                                <rect key="frame" x="88.333333333333343" y="0.0" width="78.333333333333343" height="142.33333333333334"/>
+                                                <rect key="frame" x="83.666666666666671" y="0.0" width="74.000000000000014" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -194,7 +206,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0F-ig-lEy">
-                                                <rect key="frame" x="176.66666666666666" y="0.0" width="78" height="142.33333333333334"/>
+                                                <rect key="frame" x="167.66666666666666" y="0.0" width="73.666666666666657" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -206,7 +218,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k72-9n-dJW">
-                                                <rect key="frame" x="264.66666666666669" y="0.0" width="78.333333333333314" height="142.33333333333334"/>
+                                                <rect key="frame" x="251.33333333333329" y="0.0" width="73.666666666666657" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -220,10 +232,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dL1-3u-qoh">
-                                        <rect key="frame" x="0.0" y="609.66666666666663" width="343" height="142.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="577.66666666666663" width="325" height="134.33333333333337"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7U-4M-pmq">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="142.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -235,7 +247,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxl-u3-cE7">
-                                                <rect key="frame" x="88.333333333333343" y="0.0" width="78.333333333333343" height="142.33333333333334"/>
+                                                <rect key="frame" x="83.666666666666671" y="0.0" width="74.000000000000014" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -247,7 +259,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-rJ-QaO">
-                                                <rect key="frame" x="176.66666666666666" y="0.0" width="78" height="142.33333333333334"/>
+                                                <rect key="frame" x="167.66666666666666" y="0.0" width="73.666666666666657" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -259,7 +271,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDg-5L-TLL">
-                                                <rect key="frame" x="264.66666666666669" y="0.0" width="78.333333333333314" height="142.33333333333334"/>
+                                                <rect key="frame" x="251.33333333333329" y="0.0" width="73.666666666666657" height="134.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="36"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -304,24 +316,73 @@
                         <outletCollection property="btnCollection" destination="sxl-u3-cE7" collectionClass="NSMutableArray" id="l0b-ts-SWr"/>
                         <outletCollection property="btnCollection" destination="kDg-5L-TLL" collectionClass="NSMutableArray" id="Cn5-YH-heA"/>
                         <outletCollection property="btnCollection" destination="k6T-rJ-QaO" collectionClass="NSMutableArray" id="k1D-3O-z67"/>
-                        <segue destination="cOv-fo-Gm4" kind="presentation" identifier="backToStartController" modalPresentationStyle="fullScreen" id="PZE-Vq-1sF"/>
+                        <segue destination="Pop-Ur-Zwn" kind="presentation" identifier="backToStartController" modalPresentationStyle="fullScreen" id="PZE-Vq-1sF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b22-Od-7or" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520" y="-73"/>
+            <point key="canvasLocation" x="1461.5999999999999" y="-73.152709359605907"/>
+        </scene>
+        <!--Scores-->
+        <scene sceneID="Yag-Px-gVr">
+            <objects>
+                <tableViewController id="Ps4-sq-9bA" customClass="StatsViewController" customModule="DMFindingGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FhM-HY-fjb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatsCellID" id="hUU-eg-97U">
+                                <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hUU-eg-97U" id="rqi-9A-XFE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ps4-sq-9bA" id="CI4-AX-FVG"/>
+                            <outlet property="delegate" destination="Ps4-sq-9bA" id="t9V-OT-7zm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Scores" prompt="You can delete scores by tapping" id="xP6-ed-7PV">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="4uH-gm-Kgj"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMG-xr-gR6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="840"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5fF-gp-DIR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pop-Ur-Zwn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S9f-Nu-gjW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cOv-fo-Gm4" kind="relationship" relationship="rootViewController" id="uxB-bn-hBd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmZ-uC-52r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359.19999999999999" y="-73.152709359605907"/>
         </scene>
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

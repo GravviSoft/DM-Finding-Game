@@ -9,7 +9,6 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    
     @IBOutlet weak var secondsLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var targetLabel: UILabel!
@@ -19,8 +18,13 @@ class GameViewController: UIViewController {
     var btnColorTimer: Timer!
     let gameBrain = GameBrain.shared
     
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(dataFilePath)
         updateUI()
         configureTimer()
     }
@@ -30,6 +34,7 @@ class GameViewController: UIViewController {
         scoreBoardTimer.invalidate()
     }
     
+    //MARK: - Timer Methods
     func configureTimer() {
         scoreBoardTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: fireTimer(timer:))
         RunLoop.current.add(scoreBoardTimer, forMode: .common)
@@ -44,6 +49,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    //MARK: - UIButton Method
     @IBAction func letterBtn(_ sender: UIButton) {
         let selectedletter = sender.titleLabel!.text!
         if selectedletter == gameBrain.targetLetter{
@@ -60,21 +66,36 @@ class GameViewController: UIViewController {
         }
     }
     
-
+    //MARK: - Back Btn
     @IBAction func backBtn(_ sender: UIButton) {
         gameOver()
     }
     
+    //MARK: - GameOver Method/Perform Save CoreData
     func gameOver(){
-        self.performSegue(withIdentifier: "backToStartController", sender: self)
-        gameBrain.score > gameBrain.highScore ? gameBrain.highScore = gameBrain.score : nil
+        self.performSegue(withIdentifier: K.backToStartController, sender: self)
+        let newScore = Score(context: self.context)
+        newScore.score = Int16(gameBrain.score)
+        saveScores()
+//        gameBrain.score > gameBrain.highScore ? gameBrain.highScore = gameBrain.score : nil
     }
     
+    //MARK: - Update UI W/ New Letters
     func updateUI() {
         gameBrain.shuffleNumbers()
         targetLabel.text = gameBrain.targetLetter
         for (index, letter) in gameBrain.randomLetters.enumerated() {
             btnCollection[index].setTitle(letter, for: .normal)
+        }
+    }
+    
+    
+    //MARK: - Saving Scores To CoreData
+    func saveScores(){
+        do{
+            try context.save()
+        } catch{
+            print("Error saving scores to CoreData")
         }
     }
 }
